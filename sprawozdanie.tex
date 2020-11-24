@@ -1,0 +1,80 @@
+\documentclass[a4paper]{article}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in]{geometry}
+\title{Sprawozdanie sprawdzian PWI}
+\date{\today}
+\author{Mateusz Marszałek}
+\begin{document}
+ \maketitle
+ $\rho \frac{D\mathbf{u}}{Dt}=\rho (\frac{\partial \mathbf{u}}{\partial u}+\mathbf{u} \cdot \mathbf{\nabla u})=-\nabla \bar{p}+\nabla \{\mu (\nabla \mathbf{u}+(\bigtriangledown \mathbf{u})^T-\frac{2}{3}(\nabla \mathbf{u})\mathbf{I})\}+\rho \mathbf{g}$\\
+ \vspace{1 cm}
+ 
+ $\tilde{f}(\xi)=\int_{-\infty}^{\infty}f(x)e^{-2\pi ix\xi}dx$\\ 
+ \vspace{1 cm}
+ 
+ $\mathbb{P}(\hat{X_n}-z_{1-{\frac{\alpha}{2}}}\frac{\sigma}{\sqrt{n}}\leq \mathbb{E}X\leq \hat{X_n}+z_{1-\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}})\approx 1-\alpha$\\
+ \vspace{1 cm}
+ 
+ $
+  \begin{bmatrix}
+   1 & 2 \\
+   3 & 4
+  \end{bmatrix}
+  \oplus
+  \begin{bmatrix}
+  0 & 5 \\
+  6 & 7
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   1\begin{bmatrix}
+   0 & 5\\
+   6 & 7
+   \end{bmatrix}
+   & 2\begin{bmatrix}
+   0 & 5\\
+   6 & 7
+   \end{bmatrix}
+   \\
+   3\begin{bmatrix}
+   0 & 5\\
+   6 & 7
+   \end{bmatrix}
+   & 4\begin{bmatrix}
+   0 & 5\\
+   6 & 7
+   \end{bmatrix}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+   0 & 5 & 0 & 10 \\
+   6 & 7 & 12 & 14 \\
+   0 & 15 & 0 & 20 \\
+   18 & 21 & 24 & 28
+  \end{bmatrix}
+$
+
+\section{}
+\subsection{}
+Dwa klucze generujemy poleceniem ssh-keygen.
+\subsection{}
+Do przeniesienia klucza używamy 'ssh-copy-id -i' ścieżka do klucza i jego nazwa, a następnie podajemy login i server z którym się łączymy.
+\subsection{}
+Klucz możemy dodać bezpośrednio do repozytorium lub do całego konta w ustawieniach.
+\subsection{}
+w pliku config w folderze .ssh trzeba dodać\\ 
+\\
+Host pwi-sprawdzian\\
+	Hostname pwi.ii.uni.wroc.pl\\
+	user m323941\\
+	ForwardAgent yes\\
+	\\
+Dzięki temu możemy logować się na server poleceniem
+ssh pwi-sprawdzian
+\subsection{}
+Dodana wyżej linikja 'ForwardAgent yes' sprawia, że możemy używać kluczy z głównego urządzenia na serwerze.
+\end{document}
